@@ -27,6 +27,9 @@ jobs:
       - name: Check Python syntax
         run: python -m py_compile autoaudit.py
 
+      - name: Run positive and negative tests
+        run: python -m unittest discover -v
+
       - name: Run AutoAudit
         run: python autoaudit.py
         
