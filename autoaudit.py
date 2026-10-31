@@ -53,6 +53,17 @@ def test_website(url, expected_status=200):
     return result
 
 
+
 if __name__ == "__main__":
-    test_website("https://example.com")
+    import sys
+
+    result = test_website("https://example.com")
+
+    if result["result"] == "FAIL":
+        print("AutoAudit detected a failed check.")
+        sys.exit(1)
+
+    print("AutoAudit check passed.")
+    sys.exit(0)
+
   
