@@ -83,3 +83,48 @@ Failures must be documented, investigated, and corrected without hiding evidence
 ## Project Purpose
 
 Build a complete, verifiable software QA application while demonstrating practical Python development, debugging, automated testing, and GitHub version control.
+
+
+## Installation and Usage
+
+AutoAudit requires Python 3 and Git.
+
+### 1. Clone the repository
+
+```cmd
+git clone https://github.com/jaisejasper1995-create/AutoAudit.git
+cd AutoAudit
+```
+
+### 2. Run the automated tests
+
+```cmd
+python -m unittest discover -v
+```
+
+The verified baseline contains 8 automated tests.
+
+### 3. Run AutoAudit
+
+```cmd
+python autoaudit.py
+```
+
+AutoAudit performs its configured validation checks and displays the result in the terminal.
+
+### 4. Inspect JSON evidence
+
+After execution, check the generated reports:
+
+```cmd
+dir reports
+type reports\*.json
+```
+
+Evidence reports include run identifiers, timestamps, validation results, and PASS/FAIL summaries.
+
+### Verification Environment
+
+The release candidate was tested using a fresh Git clone on Windows with Python 3. Automated tests and the default execution completed successfully.
+
+See the Verification Evidence and Verification Limitations sections above for the recorded results and boundaries of testing.
