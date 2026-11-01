@@ -29,6 +29,19 @@ jobs:
 
       - name: Run positive and negative tests
         run: python -m unittest discover -v
+        
+
+      - name: Run AutoAudit
+        run: python autoaudit.py
+
+      - name: Upload JSON evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autoaudit-json-evidence
+          path: reports/*.json
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Run AutoAudit
         run: python autoaudit.py
