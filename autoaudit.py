@@ -1,8 +1,14 @@
+
+"""AutoAudit website validation and evidence reporting."""
+
 import urllib.request
 import urllib.error
 import time
 import json
+import sys
 from datetime import datetime, timezone
+
+from evidence_report import generate_report
 
 
 def test_website(url, expected_status=200):
@@ -53,17 +59,30 @@ def test_website(url, expected_status=200):
     return result
 
 
-
-if __name__ == "__main__":
-    import sys
+def main():
+    """Run AutoAudit and preserve the evidence."""
 
     result = test_website("https://example.com")
 
+    try:
+        report_path = generate_report([result])
+
+    except (OSError, ValueError) as exc:
+        print(
+            f"AutoAudit evidence reporting failed: {exc}",
+            file=sys.stderr
+        )
+        return 1
+
+    print(f"\nEvidence saved: {report_path}")
+
     if result["result"] == "FAIL":
         print("AutoAudit detected a failed check.")
-        sys.exit(1)
+        return 1
 
     print("AutoAudit check passed.")
-    sys.exit(0)
+    return 0
 
-  
+
+if __name__ == "__main__":
+    sys.exit(main())
