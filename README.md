@@ -11,14 +11,19 @@ AutoAudit is a Python-based software testing tool designed to automate repetitiv
 
 The goal is to identify failures, collect evidence, and generate reliable testing reports.
 
-## Planned Features
+## Verified Capabilities
 
 - Website availability checks
 - HTTP status code validation
-- API response testing
 - Response time measurement
 - Automated PASS/FAIL reporting
-- Test history and evidence collection
+- JSON evidence generation with timestamps and unique run IDs
+- GitHub Actions automated testing and evidence artifact uploads
+
+## Planned Features (Not Yet Verified)
+
+- Broader API response testing
+- Persistent test history
 - HTML reporting dashboard
 
 ## Technology
