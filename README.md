@@ -7,7 +7,7 @@ Automated Software Quality Assurance & Testing
 
 ## Overview
 
-AutoAudit is a Python-based software testing tool designed to automate repetitive website and API validation tasks.
+AutoAudit is a Python-based software quality assurance tool that automates website availability checks, HTTP status validation, and structured JSON evidence reporting.
 
 The goal is to identify failures, collect evidence, and generate reliable testing reports.
 
@@ -67,9 +67,17 @@ Live HTTP responses were not independently reproduced during the final evidence 
 
 ### Project Status
 
-Milestone 5: VERIFIED PASS
+**Release Candidate: v1.0.0**
 
-Next: Release-readiness review, documentation cleanup, and clean-install verification.
+- Milestone 5: VERIFIED PASS
+- Automated tests: 8 PASS
+- Clean-install verification: PASS (Windows, Python 3)
+- GitHub Actions validation: PASS (previously verified run)
+- JSON evidence generation: VERIFIED
+- MIT License: VERIFIED
+- Release publication: PENDING
+
+AutoAudit is undergoing final release verification. The project is not considered officially released until the v1.0.0 GitHub release is published and verified.
 
 
 
