@@ -42,7 +42,3 @@ jobs:
           path: reports/*.json
           if-no-files-found: error
           retention-days: 30
-
-      - name: Run AutoAudit
-        run: python autoaudit.py
-        
